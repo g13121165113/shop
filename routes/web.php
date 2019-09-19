@@ -18,3 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(array('prefix'=>'index'),function(){
+    Route::get('/layouts','index\GoodsController@layouts');//全局购物车
+    Route::group(array('prefix'=>'goods'),function(){
+        Route::get('/index','index\GoodsController@index');//主页
+    });
+    Route::group(array('prefix'=>'shop'),function(){
+        Route::get('/index','index\ShopController@index');//隐藏栏购物车
+    });
+
+});
+
+
+
