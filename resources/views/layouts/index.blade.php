@@ -66,7 +66,7 @@
 
 @section('script')
 @show
-<!-- footer -->
+<!-- footer 尾部-->
 <div class="footer">
         <div class="container">
             <div class="about-us-foot">

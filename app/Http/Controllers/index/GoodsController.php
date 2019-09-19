@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\index;
 
-use App\model\goods;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\model\goods;
@@ -20,7 +19,7 @@ class GoodsController extends Controller
         $goods = goods::get()->toArray();
         //$goods = json_decode($goods);
         //dd($goods);
-        return view('layouts/menu',compact('goods'));
+        return view('layouts.menu',compact('goods'));
     }
 
 
