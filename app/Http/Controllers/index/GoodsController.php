@@ -14,10 +14,10 @@ class GoodsController extends Controller
 
     public function layouts()
     {
-        //$goods = goods::get()->toArray();
+        $goods = goods::get()->toArray();
         //$goods = json_decode($goods);
         //dd($goods);
-        return view('layouts/menu');
+        return view('layouts/menu',compact('goods'));
     }
 
 }
