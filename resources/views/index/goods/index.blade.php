@@ -229,4 +229,5 @@
     <!-- loader -->
     <div id="fakeLoader"></div>
     <!-- end loader -->
+
 @endsection
