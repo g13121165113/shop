@@ -31,8 +31,12 @@ class GoodsController extends AdminController
         $grid->column('goods_name', __('商品名称'));
         $grid->column('goods_img', __('商品图片'));
         $grid->column('goods_desc', __('商品描述'));
+<<<<<<< HEAD
         $grid->column('goods_dprice', __('商品定价'));
         $grid->column('goods_sprice', __('商品售价'));
+=======
+        $grid->column('goods_price', __('商品售价'));
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
         $grid->column('cate_id', __('所属分类'));
 
         return $grid;
@@ -52,8 +56,12 @@ class GoodsController extends AdminController
         $show->field('goods_name', __('商品名称'));
         $show->field('goods_img', __('商品图片'));
         $show->field('goods_desc', __('商品描述'));
+<<<<<<< HEAD
         $show->field('goods_dprice', __('商品定价'));
         $show->field('goods_sprice', __('商品价格'));
+=======
+        $show->field('goods_price', __('商品价格'));
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
 
         return $show;
     }
@@ -70,8 +78,12 @@ class GoodsController extends AdminController
         $form->text('goods_name', __('商品名称'));
         $form->file('goods_img', __('商品图片'));
         $form->textarea('goods_desc', __('商品描述'));
+<<<<<<< HEAD
         $form->decimal('goods_dprice', __('商品定价'));
         $form->decimal('goods_sprice', __('商品售价'));
+=======
+        $form->decimal('goods_price', __('商品售价'));
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
         $data = cates::where('is_del',1)->get()->toArray();
         $arr = [];
         foreach ($data as $k => $v){
