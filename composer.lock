@@ -57,6 +57,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/cache/zipball/d768d58baee9a4862ca783840eca1b9add7a7f57",
                 "reference": "d768d58baee9a4862ca783840eca1b9add7a7f57",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
                 "shasum": "",
                 "mirrors": [
                     {
@@ -64,6 +68,12 @@
                         "preferred": true
                     }
                 ]
+<<<<<<< HEAD
+=======
+=======
+                "shasum": ""
+>>>>>>> 13f035b0ebb69f8f78cbfab7c16f7babbab87871
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
             },
             "require": {
                 "php": "~7.1"
@@ -138,6 +148,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/dbal/zipball/22800bd651c1d8d2a9719e2a3dc46d5108ebfcc9",
                 "reference": "22800bd651c1d8d2a9719e2a3dc46d5108ebfcc9",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
                 "shasum": "",
                 "mirrors": [
                     {
@@ -145,6 +159,12 @@
                         "preferred": true
                     }
                 ]
+<<<<<<< HEAD
+=======
+=======
+                "shasum": ""
+>>>>>>> 13f035b0ebb69f8f78cbfab7c16f7babbab87871
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
             },
             "require": {
                 "doctrine/cache": "^1.0",
@@ -226,6 +246,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/event-manager/zipball/a520bc093a0170feeb6b14e9d83f3a14452e64b3",
                 "reference": "a520bc093a0170feeb6b14e9d83f3a14452e64b3",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
                 "shasum": "",
                 "mirrors": [
                     {
@@ -233,6 +257,12 @@
                         "preferred": true
                     }
                 ]
+<<<<<<< HEAD
+=======
+=======
+                "shasum": ""
+>>>>>>> 13f035b0ebb69f8f78cbfab7c16f7babbab87871
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
             },
             "require": {
                 "php": "^7.1"
@@ -571,6 +601,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/b9dbc3586c5dda39536c32534e9f91ebc1031251",
                 "reference": "b9dbc3586c5dda39536c32534e9f91ebc1031251",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
                 "shasum": "",
                 "mirrors": [
                     {
@@ -578,6 +612,12 @@
                         "preferred": true
                     }
                 ]
+<<<<<<< HEAD
+=======
+=======
+                "shasum": ""
+>>>>>>> 13f035b0ebb69f8f78cbfab7c16f7babbab87871
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
             },
             "require": {
                 "doctrine/dbal": "2.*",
@@ -2161,6 +2201,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/cc686552948d627528c0e2e759186dff67c2610e",
                 "reference": "cc686552948d627528c0e2e759186dff67c2610e",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2168,6 +2212,12 @@
                         "preferred": true
                     }
                 ]
+<<<<<<< HEAD
+=======
+=======
+                "shasum": ""
+>>>>>>> 13f035b0ebb69f8f78cbfab7c16f7babbab87871
+>>>>>>> b914eaf6671914b4a0d1837cefaa196ac1f37f56
             },
             "require": {
                 "php": "^7.1.3",

@@ -20,3 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/index','IndexController@index');
+Route::group(array('prefix'=>'index'),function(){
+    Route::group(array('prefix'=>'goods'),function(){
+        Route::get('/index','index\GoodsController@index');
+    });
+    Route::group(array('prefix'=>'center'),function(){
+       	Route::get('/center','index\CenterController@center'); //个人中心
+    });
+});
+
