@@ -6,24 +6,24 @@
     <!--[if IE 6]>
     <script src="/in/js/iepng.js" type="text/javascript"></script>
         <script type="text/javascript">
-           EvPNG.fix('div, ul, img, li, input, a'); 
+           EvPNG.fix('div, ul, img, li, input, a');
         </script>
     <![endif]-->
-        
+
     <script type="text/javascript" src="/in/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="/in/js/menu.js"></script>    
-        
+    <script type="text/javascript" src="/in/js/menu.js"></script>
+
 	<script type="text/javascript" src="/in/js/select.js"></script>
-        
-    
+
+
 <title>尤洪</title>
 </head>
-<body>  
+<body>
 <!--Begin Header Begin-->
 
-       
 
-<!--End Header End--> 
+
+<!--End Header End-->
 <div class="i_bg bg_color">
     <!--Begin 用户中心 Begin -->
 	<div class="m_content">
@@ -84,9 +84,9 @@
                         </div>
                     </td>
                   </tr>
-                </table>	
+                </table>
             </div>
-            
+
             <div class="mem_t">资产信息</div>
             <table border="0" class="mon_tab" style="width:870px; margin-bottom:20px;" cellspacing="0" cellpadding="0">
               <tr>
@@ -121,10 +121,10 @@
                 <td>注册时间：<span style="color:#555555;">2015-10-10</span></td>
               </tr>
             </table>
-               
-            
+
+
         </div>
     </div>
-	<!--End 用户中心 End--> 
+	<!--End 用户中心 End-->
     <!--Begin Footer Begin -->
-   
+</div>

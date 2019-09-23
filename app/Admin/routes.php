@@ -12,19 +12,16 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
 
-<<<<<<< HEAD
     $router->resource('cates', CatesController::class);
     $router->resource('goods', GoodsController::class);
-=======
-
-    $router->resource('cates', CatesController::class);
-    $router->resource('goods', GoodsController::class);
-
-
-
 
     $router->resource('cates', CatesController::class);
     $router->resource('goods', GoodsController::class);
 
->>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
+
+
+
+    $router->resource('cates', CatesController::class);
+    $router->resource('goods', GoodsController::class);
+    
 });

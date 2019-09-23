@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\model\cates;
 use App\model\center;
 use DB;
+use App\model\goods;
+use App\model\Cart;
 
 class GoodsController extends Controller
 {
@@ -20,10 +22,16 @@ class GoodsController extends Controller
     {
     	// $data = center::where(['id'=>$id])->first();
         $data = request()->get('data');
-        $goods = Goods::where('is_del',1)->get()->toArray();
+        $goods = Cart::join("goods","cart.goods_id","=","goods.goods_id")->get()->toArray();
         return  view('index/goods/index',['data'=>$data,'goods'=>$goods]);
     }
 
+    public function select()
+    {
+        $goods = goods::where('is_del',1)->get()->toArray();
+        $return = ['code'=>6,'msg'=>'查询成功','data'=>$goods];
+        return json_encode($return);
+    }
     /**
      * 商品详情
      * @param Request $reques
@@ -33,7 +41,6 @@ class GoodsController extends Controller
     {
         $id = $reques->id;
         $res = goods::join('cates', 'goods.cate_id', '=', 'cates.cate_id')->where('goods_id',$id)->get();
-//        dd($res);
         $goods = goods::get()->toArray();
         return  view('index/goods/goodsdetails',compact('res','goods'));
     }

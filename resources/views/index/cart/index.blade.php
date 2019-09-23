@@ -11,8 +11,8 @@
                 <h3>CART</h3>
             </div>
             <div class="content">
-                <div class="cart-1">
                 @foreach ($goods as $k=>$v)
+                    <div class="cart-1 cartid" cart_id="{{$v['cart_id']}}" >
                     <div class="row">
                         <div class="col s5" goods_id = "{{$v['goods_id']}}">
                             <h5><input type="hidden" class="box"/>Image</h5>
@@ -34,7 +34,7 @@
                             <h5>Quantity</h5>
                         </div>
                         <div class="col s7" goods_id = "{{$v['goods_id']}}" goods_number= "{{$v['goods_num']}}" >
-                            <input value="{{$v['buy_number']}}" type="text" class="buy_number">
+                            <input value="{{$v['buy_num']}}" type="text" goods_price="{{$v['goods_price']}}" class="buy_number">
                         </div>
                     </div>
                     <div class="row">
@@ -42,7 +42,7 @@
                             <h5>Price</h5>
                         </div>
                         <div class="col s7">
-                            <h5>$<span id="subtotal">{{$v['subtotal']}}</span></h5>
+                            <h5>$<span class="subtotal">{{$v['subtotal']}}</span></h5>
                         </div>
                     </div>
                     <div class="row">
@@ -54,8 +54,8 @@
                         </div>
                     </div>
                     <div class="divider"></div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
             <div class="total">
             @foreach ($goods as $k=>$v)
@@ -73,11 +73,11 @@
                         <h6>Total</h6>
                     </div>
                     <div class="col s5">
-                        <h6 id="total">$40.00</h6>
+                        <h6 >$<span id="price"></span></h6>
                     </div>
                 </div>
             </div>
-            <button class="btn button-default">Process to Checkout</button>
+            <button class="btn button-default" id="btn">Process to Checkout</button>
         </div>
     </div>
     <!-- end cart -->
@@ -85,7 +85,8 @@
     <!-- loader -->
     <div id="fakeLoader"></div>
     <!-- end loader -->
-    <script src="../../../index/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script type="text/javascript">
         //购买数量失去焦点
         $(document).on("blur",'.buy_number',function(){
@@ -113,7 +114,7 @@
             getSubTotal(goods_id,_this);
 
             // //改变商品总价
-             //countTotal();
+            //  countTotal();
         })
 
         // 更改购买数量
@@ -147,26 +148,11 @@
         }
 
         //获取商品总价
-            var goods_id='';
-            var _box = $(".box");
-            //var total = $("#total").html();
-            _box.each(function(index){
-                goods_id+=$(this).parents('div').attr('goods_id')+',';
-                //alert(attr_id);
-                });
-            //alert(total);
-           // goods_id=goods_id.substr(0,goods_id.length-1);
-            //console.log(goods_id);return;
-            $.post(
-                "{{url('index/shop/getPriceInfo')}}",
-                {goods_id:goods_id},
-                function(res){
-                    if(res.code==1){
-                        $("#total").html('$'+res.price+'.00');
-                    }
-                },
-                'json'
-                );
+        var price = 0;
+        $('.subtotal').each(function(){
+            price += parseInt($(this).text());
+        })
+        $("#price").html(price);
         //删除
         $(document).on("click",'#delete',function(){
             var goods_id = $(this).parents('div').attr('goods_id');
@@ -183,6 +169,25 @@
             })
 
         });
+        $("#btn").click(function(){
+            var user_id = Cookies.get('userInfo');
+            var buy_price = $('#price').text();
+            var cart_id='';
+            var cart = $(".cartid");
+            cart.each(function(){
+                cart_id+=$(this).attr('cart_id')+',';
+            });
+            $.ajax({
+                url:'/index/order/create',
+                data:{user_id:user_id,price:buy_price,cart_id:cart_id},
+                type:"post",
+                dataType:"json",
+                success:function(msg){
+                    var order_num = msg.data;
+                    location.href="/alipay?order_num="+order_num;
+                }
+            })
+        })
     </script>
 
 @endsection

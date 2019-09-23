@@ -7,13 +7,20 @@ use App\Http\Controllers\Controller;
 use App\model\User;
 use DB;
 use App\model\goods;
+use App\model\Cart;
 
 class userController extends Controller
 {
-    public function login()
+    public function __construct()
     {
         $goods = goods::get()->toArray();
-        return view('index/user/login',compact('goods'));
+        $this->Middleware('center');
+    }
+    public function login()
+    {
+        $goods = Cart::get()->toArray();
+        $data = request()->input('data');
+        return view('index/user/login',compact('goods','data'));
     }
     public function dologin(Request $request)
     {

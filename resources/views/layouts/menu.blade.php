@@ -21,7 +21,7 @@
                                     <h5><input type="hidden" class="box"/>Quantity</h5>
                                 </div>
                                 <div class="col s7" goods_id = "{{$v['goods_id']}}" goods_number= "{{$v['goods_num']}}">
-                                    <input value="{{$v['buy_number']}}" type="text" class="buy_number">
+                                    <input value="{{$v['buy_num']}}" type="text" class="buy_number">
                                 </div>
                             </div>
                             <div class="row">

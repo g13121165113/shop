@@ -18,28 +18,27 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(array('prefix'=>'index'),function(){
-    Route::group(array('prefix'=>'goods'),function(){
-        Route::get('/index','index\GoodsController@index');
-    });
-    Route::group(array('prefix'=>'center'),function(){
-       	Route::get('/center','index\CenterController@center'); //个人中心
-    });
-});
-
+Route::get('/alipay', 'Pay\AliPayController@pay');
 Route::group(array('prefix'=>'index'),function(){
     Route::group(array('prefix'=>'goods'),function(){
         Route::get('/index','index\GoodsController@index');//主页
         Route::get('/goodsdetails','index\GoodsController@goodsdetails');
+        Route::post('/select','index\GoodsController@select');
     });
     Route::group(array('prefix'=>'cart'),function(){
         Route::get('/index','index\cartController@select');//隐藏栏购物车
+        Route::post('/create','index\cartController@create');
     });
     Route::group(array('prefix'=>'user'),function(){ //用户管理
         Route::get('/login','index\userController@login');
         Route::any('/dologin','index\userController@dologin');
         Route::post('/userInfo','index\userController@getUserInfo');
+    });
+    Route::group(array('prefix'=>'center'),function(){
+        Route::get('/center','index\CenterController@center'); //个人中心
+    });
+    Route::group(array('prefix'=>'order'),function(){
+        Route::post('/create','index\OrderController@create'); //个人中心
     });
     Route::group(array('prefix'=>'shop'),function(){
         Route::get('/index','index\ShopController@index');//隐藏栏购物车

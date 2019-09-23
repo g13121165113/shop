@@ -6,24 +6,25 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\model\Cart;
 use App\model\User;
-use App\model\Goods;
-use App\model\GoodsAttr;
+use App\model\goods;
 
 class cartController extends Controller
 {
+    public function __construct()
+    {
+        $goods = goods::get()->toArray();
+        $this->Middleware('center');
+    }
     public function select(Request $request)
     {
-        $user_id = request()->get('user_id');
-        if($user_id){
-            $result=Cart::join('goods','cart.goods_id','=','goods.goods_id')
-                ->where('cart.is_del',1)
-                ->where('cart.user_id',$user_id)
-                ->get()
-                ->toArray();
-            return view('index/cart/index',['goods'=>$result]);
-        }else{
-            echo "<script>alert('请先登录');location.href='/index/user/login'</script>";
-        }
+        $user_id = request()->get('user_id')??1;
+        $result=Cart::join('goods','cart.goods_id','=','goods.goods_id')
+            ->where('cart.is_del',1)
+            ->where('cart.user_id',$user_id)
+            ->get()
+            ->toArray();
+        $data = request()->get('data');
+        return view('index/cart/index',['goods'=>$result,'data'=>$data]);
     }
     public function create(Request $request)
     {
@@ -32,7 +33,7 @@ class cartController extends Controller
         $user_id = request()->get('user_id');
         if($user_id){
             $result=Cart::where('goods_id',$goods_id)->where('is_del',1)->where('user_id',$user_id)->first();
-            $goods = Goods::where('goods_id',$goods_id)->where('is_del',1)->first();
+            $goods = goods::where('goods_id',$goods_id)->where('is_del',1)->first();
             if($result){
                 $buy_num=$result->buy_num+1;
                 $res=Cart::where('cart_id',$result->cart_id)->update(['buy_num'=>$buy_num]);
@@ -48,10 +49,5 @@ class cartController extends Controller
             return json_encode($data);
         }
     }
-    public function settlement()
-    {
-        $arr = request()->input('cart_id');
-        $user_id = request()->input('user_id');
-        dd($arr);
-    }
+
 }

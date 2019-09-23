@@ -26,7 +26,8 @@
         </div>
     </div>
     <!-- end login -->
-<script src="../../../index/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script>
     $('#userbtn').click(function(){
         var name=$("#name").val();
@@ -47,6 +48,7 @@
                             success:function (msg) {
                                 console.log(msg);
                                 if(msg.code==6){
+                                    Cookies.set('userInfo',msg.data.user_id);
                                     location.href="../goods/index";
                                 }
                             }
