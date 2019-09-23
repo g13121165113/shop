@@ -24,12 +24,15 @@ Route::group(array('prefix'=>'index'),function(){
     Route::group(array('prefix'=>'goods'),function(){
         Route::get('/index','index\GoodsController@index');//主页
         Route::get('/goodsdetails','index\GoodsController@goodsdetails');
-
     });
-    Route::group(array('prefix'=>'shop'),function(){
-        Route::get('/index','index\ShopController@index');//隐藏栏购物车
+    Route::group(array('prefix'=>'cart'),function(){
+        Route::get('/index','index\cartController@select');//隐藏栏购物车
     });
-
+    Route::group(array('prefix'=>'user'),function(){ //用户管理
+        Route::get('/login','index\userController@login');
+        Route::any('/dologin','index\userController@dologin');
+        Route::post('/userInfo','index\userController@getUserInfo');
+    });
 });
 
 

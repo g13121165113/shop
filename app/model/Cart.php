@@ -4,7 +4,7 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cates extends Model
+class Cart extends Model
 {
-    
+    //
 }
