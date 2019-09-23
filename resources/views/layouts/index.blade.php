@@ -34,22 +34,37 @@
         <a href="#" data-activates="slide-out-right" class="side-nav-left"><i class="fa fa-user"></i></a>
     </div>
 </div>
+<<<<<<< HEAD
+
+    <!-- side nav right-->
+=======
 <!-- end navbar top -->
 <!-- side nav right-->
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
     <div class="side-nav-panel-right">
         <ul id="slide-out-right" class="side-nav side-nav-panel collapsible">
             <li class="profil">
                 <img src="img/profile.jpg" alt="">
+<<<<<<< HEAD
+                <h2>{{$data['username']}}</h2>
+            </li>
+            <li><a href="setting.html"><i class="fa fa-cog"></i>Settings</a></li>
+            <li><a href="/index/center/center"><i class="fa fa-user"></i>About Us</a></li>
+=======
                 <h2>John Doe</h2>
             </li>
             <li><a href="setting.html"><i class="fa fa-cog"></i>Settings</a></li>
             <li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
             <li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
             <li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
             <li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
         </ul>
     </div>
     <!-- end side nav right-->
+<<<<<<< HEAD
+<!-- end navbar top -->
+=======
 
 <!-- navbar bottom 下侧导航栏 + 隐藏栏-->
 <!-- 下侧导航栏-- -->
@@ -251,14 +266,43 @@
 @include('layouts.menu')
 <!-- end cart menu -->
 
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
 @section('sidebar')
 @show
 @section('footer')
 @show
+<<<<<<< HEAD
+<!-- navbar bottom -->
+<div class="navbar-bottom">
+    <div class="row">
+        <div class="col s2">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+        </div>
+        <div class="col s2">
+            <a href="wishlist.html"><i class="fa fa-heart"></i></a>
+        </div>
+        <div class="col s4">
+            <div class="bar-center">
+                <a href="#animatedModal" id="cart-menu"><i class="fa fa-shopping-basket"></i></a>
+                <span>2</span>
+            </div>
+        </div>
+        <div class="col s2">
+            <a href="contact.html"><i class="fa fa-envelope-o"></i></a>
+        </div>
+        <div class="col s2">
+            <a href="#animatedModal2" id="nav-menu"><i class="fa fa-bars"></i></a>
+        </div>
+    </div>
+</div>
+<!-- end navbar bottom -->
+@section('script')
+@show
+=======
 
 @section('script')
 @show
-<!-- footer -->
+<!-- footer 尾部-->
 <div class="footer">
         <div class="container">
             <div class="about-us-foot">
@@ -278,6 +322,7 @@
         </div>
 </div>
 <!-- end footer -->
+>>>>>>> 93dffc73519265a7440159f9a6ae35a9322f62a1
 <!-- scripts -->
 <script src="../../../index/js/jquery.min.js"></script>
 <script src="../../../index/js/materialize.min.js"></script>

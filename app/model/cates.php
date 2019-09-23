@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class cates extends Model
 {
-    
+    public $timestamps = false;
+    public $timestamp = false;
 }
